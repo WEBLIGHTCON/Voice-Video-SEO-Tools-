@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice & Video SEO Tools</title>
+    <meta name="description" content="Optimize for voice search and YouTube Shorts SEO with our free tools. Generate voice-search keywords and YouTube Shorts SEO recommendations.">
+    <style>
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: #4285f4;
+            color: white;
+            border-color: #4285f4;
+        }
+
+        /* Tool Sections */
+        .tool-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .tool-section.active {
+            display: block;
+        }
+
+        /* Form Elements */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #357abd;
+        }
+
+        /* Results Section */
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tabs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Voice & Video SEO Tools</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTool('voice')">Voice Search Generator</button>
+            <button class="tab-button" onclick="showTool('youtube')">YouTube Shorts Analyzer</button>
+        </div>
+
+        <!-- Voice Search Generator -->
+        <div id="voice-tool" class="tool-section active">
+            <h2>Voice Search Query Generator</h2>
+            <div class="input-group">
+                <input type="text" id="seed-keyword" placeholder="Enter seed keyword (e.g., 'best restaurants')">
+                <button onclick="generateVoiceKeywords()">Generate</button>
+            </div>
+            <div id="voice-results" class="results"></div>
+        </div>
+
+        <!-- YouTube Shorts Analyzer -->
+        <div id="youtube-tool" class="tool-section">
+            <h2>YouTube Shorts SEO Analyzer</h2>
+            <div class="input-group">
+                <input type="text" id="video-topic" placeholder="Enter video topic (e.g., 'home workouts')">
+                <button onclick="analyzeShortsSEO()">Analyze</button>
+            </div>
+            <div id="youtube-results" class="results"></div>
+        </div>
+    </div>
+
+    <script>
+        // Tab Navigation
+        function showTool(tool) {
+            document.querySelectorAll('.tool-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.getElementById(`${tool}-tool`).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Voice Search Generator Logic
+        function generateVoiceKeywords() {
+            const seed = document.getElementById('seed-keyword').value;
+            if (!seed) return;
+
+            const modifiers = {
+                question: ['who', 'what', 'where', 'when', 'why', 'how'],
+                conversational: ['best way to', 'can I', 'should I', 'tips for'],
+                location: ['near me', 'in [city]', 'close by'],
+                intent: ['for beginners', '2024', 'with pros and cons']
+            };
+
+            const generateLongTail = (seed) => {
+                const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
+                return [
+                    `${getRandom(modifiers.conversational)} ${seed} ${getRandom(modifiers.intent)}`,
+                    `${getRandom(modifiers.question)} ${seed} ${getRandom(modifiers.location)}`,
+                    `${seed} ${getRandom(modifiers.question)} ${getRandom(modifiers.intent)}`
+                ];
+            };
+
+            const results = generateLongTail(seed);
+            const html = `<h3>Suggested Voice Search Phrases:</h3>
+                <ul>${results.map(r => `<li>${r}</li>`).join('')}</ul>
+                <button onclick="copyResults('voice-results')">Copy All</button>`;
+            
+            document.getElementById('voice-results').innerHTML = html;
+        }
+
+        // YouTube Shorts Analyzer Logic
+        function analyzeShortsSEO() {
+            const topic = document.getElementById('video-topic').value;
+            if (!topic) return;
+
+            const keywords = topic.toLowerCase().split(' ');
+            const tags = [...keywords, ...keywords.map(w => `${w}s`), 'shorts', 'viral', 'trending'];
+            
+            const suggestions = {
+                titles: [
+                    `🔥 ${topic.charAt(0).toUpperCase() + topic.slice(1)} Shorts Idea You NEED To Try!`,
+                    `${topic} Hack That Went VIRAL 🔥 #shorts`,
+                    `3 MINUTE ${topic.toUpperCase()} CHALLENGE ⏱️`
+                ],
+                description: `🎥 This Shorts video shows the best ${topic} tips!\n\n
+                    🔔 Subscribe for daily ${topic} content!\n
+                    👍 Like if you want more ${topic} Shorts!\n\n
+                    #${keywords.join(' #')} #shorts #viral`,
+                tags: [...new Set(tags)].slice(0, 15)
+            };
+
+            const html = `<h3>SEO Recommendations:</h3>
+                <p><strong>Titles:</strong><br>${suggestions.titles.join('<br>')}</p>
+                <p><strong>Description:</strong><br>${suggestions.description.replace(/\n/g, '<br>')}</p>
+                <p><strong>Tags:</strong><br>${suggestions.tags.join(', ')}</p>
+                <button onclick="copyResults('youtube-results')">Copy All</button>`;
+            
+            document.getElementById('youtube-results').innerHTML = html;
+        }
+
+        // Copy Results Function
+        function copyResults(containerId) {
+            const container = document.getElementById(containerId);
+            const text = container.innerText.replace(/Copy All/g, '');
+            navigator.clipboard.writeText(text);
+            alert('Copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
