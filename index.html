@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice & Video SEO Tools - Boost Your Search Rankings</title>
+    <meta name="description" content="Free AI-powered SEO tools for voice search optimization and YouTube Shorts ranking. Generate voice-search keywords and optimize Shorts content effortlessly.">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #0f9d58;
+            --text-color: #2d3748;
+            --background: #f7fafc;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background);
+        }
+
+        /* Header Styles */
+        .header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1rem 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tool-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #357abd;
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-color);
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">SEOVoiceVideo</a>
+            <div class="nav-links">
+                <a href="#tools">Tools</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Boost Your SEO with AI-Powered Voice & Video Tools</h1>
+            <p>Generate voice-search optimized keywords and perfect YouTube Shorts SEO in seconds. Free forever for content creators.</p>
+            <div style="margin-top: 2rem;">
+                <a href="#tools" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-grid">
+            <article class="tool-card">
+                <h3>Voice Search Generator</h3>
+                <p>Create natural-language keywords optimized for voice search assistants like Siri and Alexa</p>
+                <a href="/voice-generator" class="cta-button">Try Now →</a>
+            </article>
+
+            <article class="tool-card">
+                <h3>YouTube Shorts Analyzer</h3>
+                <p>Get instant SEO recommendations for your YouTube Shorts titles, tags, and descriptions</p>
+                <a href="/shorts-analyzer" class="cta-button">Try Now →</a>
+            </article>
+        </section>
+
+        <section class="features" id="features">
+            <h2>Why Choose Our Tools?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h4>AI-Powered Analysis</h4>
+                    <p>GPT-4 powered recommendations for maximum search visibility</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Real-Time Optimization</h4>
+                    <p>Instant results with actionable SEO insights</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔓</div>
+                    <h4>Free Forever</h4>
+                    <p>No credit card required, unlimited usage</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Tools</h4>
+                <a href="/voice-generator">Voice Search Generator</a>
+                <a href="/shorts-analyzer">YouTube Shorts Analyzer</a>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="/blog">SEO Blog</a>
+                <a href="/tutorials">Video Tutorials</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.createElement('button');
+        mobileMenuButton.innerHTML = '☰';
+        mobileMenuButton.style.position = 'fixed';
+        mobileMenuButton.style.top = '1rem';
+        mobileMenuButton.style.right = '1rem';
+        mobileMenuButton.style.background = 'var(--primary-color)';
+        mobileMenuButton.style.color = 'white';
+        mobileMenuButton.style.padding = '0.5rem';
+        mobileMenuButton.style.borderRadius = '5px';
+        mobileMenuButton.style.display = 'none';
+        mobileMenuButton.style.zIndex = '1000';
+        document.body.appendChild(mobileMenuButton);
+
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Responsive Menu Handling
+        window.addEventListener('resize', () => {
+            const navLinks = document.querySelector('.nav-links');
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+                mobileMenuButton.style.display = 'none';
+            } else {
+                navLinks.style.display = 'none';
+                mobileMenuButton.style.display = 'block';
+            }
+        });
+
+        // Initial check
+        window.dispatchEvent(new Event('resize'));
+    </script>
+</body>
+</html>
